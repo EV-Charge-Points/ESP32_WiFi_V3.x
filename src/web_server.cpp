@@ -692,7 +692,7 @@ void handleDescribe(MongooseHttpServerRequest *request) {
   response->setCode(200);
   response->setContentType(CONTENT_TYPE_TEXT);
   response->addHeader("Access-Control-Allow-Origin", "*");
-  response->setContent("openevse");
+  response->setContent("evcp");
   request->send(response);
 }
 

@@ -15,7 +15,7 @@ String www_password = "";
 
 // Advanced settings
 String esp_hostname = "";
-String esp_hostname_default = "openevse-"+HAL.getShortId();
+String esp_hostname_default = "evcp-"+HAL.getShortId();
 
 // EMONCMS SERVER strings
 String emoncms_server = "";
@@ -30,7 +30,7 @@ String mqtt_user = "";
 String mqtt_pass = "";
 String mqtt_solar = "";
 String mqtt_grid_ie = "";
-String mqtt_announce_topic = "openevse/announce/"+HAL.getShortId();
+String mqtt_announce_topic = "evcp/announce/"+HAL.getShortId();
 
 // Ohm Connect Settings
 String ohm = "";
