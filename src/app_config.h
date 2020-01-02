@@ -37,6 +37,10 @@ extern String mqtt_solar;
 extern String mqtt_grid_ie;
 extern String mqtt_announce_topic;
 
+// kWh unit cost
+extern uint32_t unit_cost;
+extern String unit_cost_format;
+
 // 24-bits of Flags
 extern uint32_t flags;
 
@@ -98,6 +102,11 @@ extern void config_save_ohm(bool enable, String qohm);
 // Save the flags
 // -------------------------------------------------------------------
 extern void config_save_flags(uint32_t flags);
+
+// -------------------------------------------------------------------
+// Save the unit cost
+// -------------------------------------------------------------------
+extern void config_save_unit_cost(String format, uint32_t cost);
 
 // -------------------------------------------------------------------
 // Reset the config back to defaults

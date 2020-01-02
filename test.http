@@ -52,9 +52,25 @@ Content-Type: application/x-www-form-urlencoded
 
 ###
 
+
 POST {{baseUrl}}/saveohmkey HTTP/1.1
 Content-Type: application/x-www-form-urlencoded
 
+###
+# Typical UK cost
+
+POST {{baseUrl}}/saveunitcost HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+
+format=%C2%A3%25.2f&cost=0.14
+
+###
+# Typical USA cost
+
+POST {{baseUrl}}/saveunitcost HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+
+format=%24%25.2f&cost=0.1319
 
 ###
 
