@@ -446,10 +446,11 @@ handleSaveUnitCost(MongooseHttpServerRequest *request) {
     return;
   }
 
-  String format = request->getParam("format");
+  String local = request->getParam("local");
+  String code = request->getParam("code");
   String cost = request->getParam("cost");
 
-  config_save_unit_cost(format, (uint32_t)(cost.toDouble() * 1000));
+  config_save_unit_cost(local, code, (uint32_t)(cost.toDouble() * UNIT_COST_MULTIPLIER));
 
   response->setCode(200);
   response->print("saved");
@@ -617,8 +618,9 @@ handleConfig(MongooseHttpServerRequest *request) {
   s += "\",";
   s += "\"hostname\":\"" + esp_hostname + "\",";
   s += "\"ohm_enabled\":" + String(config_ohm_enabled() ? "true" : "false")+",";
-  s += "\"unit_cost_value\":"+String((double)unit_cost / 1000.0)+",";
-  s += "\"unit_cost_format\":\"" + unit_cost_format + "\"";
+  s += "\"unit_cost_value\":"+String((double)unit_cost / UNIT_COST_MULTIPLIER)+",";
+  s += "\"unit_cost_local\":\"" + unit_cost_local + "\",";
+  s += "\"unit_cost_code\":\"" + unit_cost_code + "\"";
   s += "}";
 
   response->setCode(200);

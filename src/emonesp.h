@@ -88,4 +88,8 @@
 #define HAL_SHORT_ID_LENGTH 4
 #endif
 
+#ifndef UNIT_COST_MULTIPLIER
+#define UNIT_COST_MULTIPLIER 10000.0
+#endif
+
 #endif // _EMONESP_H
